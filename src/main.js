@@ -8,12 +8,15 @@ import qs from 'qs';
 import moment from 'moment';
 import Vant from 'vant';
 import 'vant/lib/index.css';
+import ViewUI from 'view-design';
+import 'view-design/dist/styles/iview.css';
 import global from './global/global.js'
 import API from './global/api'
 
 Vue.use(VueAxios, axios);
 Vue.use(global);
 Vue.use(Vant);
+Vue.use(ViewUI);
 Vue.prototype.qs = qs;
 
 Vue.prototype.api = API;
