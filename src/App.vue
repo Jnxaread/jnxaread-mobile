@@ -12,14 +12,14 @@
         </div>
         <div class="footerBar">
             <van-tabbar v-model="activeBar">
-                <van-tabbar-item icon="wap-home">首页</van-tabbar-item>
+                <van-tabbar-item icon="wap-home" to="/">首页</van-tabbar-item>
                 <van-tabbar-item>
                     <div>文库</div>
                     <template #icon>
                         <van-icon class="iconfont" class-prefix="icon" name="library" size="18"></van-icon>
                     </template>
                 </van-tabbar-item>
-                <van-tabbar-item>
+                <van-tabbar-item to="/forum">
                     论坛
                     <template #icon>
                         <van-icon class="iconfont" class-prefix="icon" name="forum" size="18"></van-icon>

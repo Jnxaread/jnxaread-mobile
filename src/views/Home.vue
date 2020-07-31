@@ -28,16 +28,15 @@
             <div class="section_title">日常交流</div>
             <div class="section_content">
                 <div class="section_fiction" v-for="(topic,index) in topics" :key="index">
-                    <div class="fiction_left">
-                        <div class="fiction_title">
-                            <router-link :to="'/topic?id='+topic.id">{{topic.title}}</router-link>
-                        </div>
-                        <div class="fiction_brief" v-html="topic.content"></div>
+                    <div class="fiction_title">
+                        【<span class="topic_label">{{ topic.label }}</span>】
+                        <router-link :to="'/toTopic?id='+topic.id">{{ topic.title }}</router-link>
                     </div>
-                    <div class="fiction_right">
-                        <div class="fiction_author">{{topic.lastReply}}</div>
-                        <!--<div class="fiction_updateTime">{{topic.lastSubmit | dateFormat}}</div>-->
-                        <div class="fiction_updateTime">
+                    <div>
+                        <div class="topic_author">{{ topic.username }}</div>
+                        <div class="topic_time">
+                            <Time :time="topic.createTime"/>
+                            <span>/</span>
                             <Time :time="topic.lastSubmit"/>
                         </div>
                     </div>
@@ -165,5 +164,27 @@
         line-height: 25px;
         font-size: 0.95rem;
         color: #505050;
+    }
+
+    .topic_label {
+        font-size: 1rem;
+    }
+
+    .topic_author {
+        float: left;
+        font-size: 1.05rem;
+        font-weight: bold;
+        color: #505050;
+        line-height: 27px;
+    }
+
+    .topic_time {
+        float: right;
+        line-height: 25px;
+        font-size: 0.95rem;
+        color: #505050;
+        span{
+            margin: 0 0.1rem;
+        }
     }
 </style>
